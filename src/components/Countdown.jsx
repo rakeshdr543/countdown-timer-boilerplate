@@ -12,23 +12,24 @@ class Countdown extends React.Component {
        this.value=0;
         
     }
-    componentDidMount=()=>{
-      console.log('value',this.state.seconds);
-    }
+
     startTimer=(seconds)=>{
         this.setState({seconds:seconds})
 
         if(this.timer===0 && this.state.seconds>0){
-            this.timer=setInterval(this.countdown,1000)
+            this.timer=setInterval(this.countdown,1000);
+            
         }
     }
+    
     countdown=()=>{
-        this.value=this.state.seconds;
+       
         let seconds=this.state.seconds-1;
-        this.value=seconds;
-        
+       
+      
         this.setState({seconds:seconds})
         if(seconds===0){
+            
             clearInterval(this.timer)
         }
 
@@ -36,7 +37,7 @@ class Countdown extends React.Component {
     render() {
         return (
             <div>
-                <Clock timeInSeconds={this.value}/>
+                <Clock timeInSeconds={this.state.seconds}/>
                 <CountdownForm onSetCountdownTime={this.startTimer}/>
             </div>
         );
