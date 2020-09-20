@@ -1,4 +1,5 @@
 {
+  "homepage": "http://rakeshdr543.github.io/countdown-timer-boilerplate",
   "name": "boilerplate-code",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +15,8 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "countdown-timer-boilerplate -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
